@@ -3,7 +3,7 @@ public class UserManager {
 	
 	
 	public void add(User user) {
-		System.out.println(user.getFirstName() + " added");
+		System.out.println("added");
 	}
 	
 	public void login() {

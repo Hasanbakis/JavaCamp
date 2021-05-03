@@ -7,8 +7,7 @@ public class Main {
 		UserManager userManager = new UserManager();
 		
 		User user1 = new User();
-		user1.setFirstName("Hasan");
-		
+		user1.setEmail("Engindemirog@gmail.com");
 		userManager.add(user1);
 		
 		
