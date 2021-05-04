@@ -9,10 +9,10 @@ import Utils.Runner;
 
 public class GameManager implements GameService{
 	
-	private LoggerService loggerservice;
+	private LoggerService[] loggerservice;
 	
 
-	public GameManager(LoggerService loggerservice) {
+	public GameManager(LoggerService[] loggerservice) {
 		super();
 		this.loggerservice = loggerservice;
 	}

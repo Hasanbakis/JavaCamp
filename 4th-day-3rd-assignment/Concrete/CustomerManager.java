@@ -8,9 +8,9 @@ import Utils.Runner;
 
 public class CustomerManager implements CustomerService{
 	private CustomerCheckService customerCheckService;
-	private LoggerService loggerService;
+	private LoggerService[] loggerService;
 
-	public CustomerManager(CustomerCheckService customerCheckService, LoggerService loggerService) {
+	public CustomerManager(CustomerCheckService customerCheckService, LoggerService[] loggerService) {
 		super();
 		this.customerCheckService = customerCheckService;
 		this.loggerService = loggerService;

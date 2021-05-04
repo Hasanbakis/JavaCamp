@@ -7,11 +7,11 @@ import Utils.Runner;
 
 public class CampaignManager implements CampaignService{
 	
-	private LoggerService loggerservice;
+	private LoggerService[] loggerservice;
 
 	
 
-	public CampaignManager(LoggerService loggerservice) {
+	public CampaignManager(LoggerService[] loggerservice) {
 		super();
 		this.loggerservice = loggerservice;
 	}

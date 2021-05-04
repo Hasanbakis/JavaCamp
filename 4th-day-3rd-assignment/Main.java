@@ -1,4 +1,7 @@
 package assigment2;
+import java.time.LocalDate;
+
+import Abstract.LoggerService;
 import Adapters.MernisServiceAdapter;
 import Concrete.CampaignManager;
 import Concrete.CustomerManager;
@@ -12,16 +15,14 @@ import Entities.Game;
 public class Main {
 
 	public static void main(String[] args) {
-	
-	 
+		LoggerService[] loggers = { new DatabaseLogger(), new EmailLogger() };
 	 //CAMPAIGN
-	 Campaign campaign1 = new Campaign();
-	 campaign1.setId(1);
-	 campaign1.setCampaignDate(" between 10june and 25july");
-	 campaign1.setCampaignName("Ramadan");
+	 Campaign campaign1 = new Campaign(1," between 10.05.2021 and 12.06.2021","Ramadan");
 	 
-	 CampaignManager campaignManager1 = new CampaignManager(new EmailLogger());
-	 CampaignManager campaignManager2 = new CampaignManager(new DatabaseLogger());
+	 
+	 
+	 CampaignManager campaignManager1 = new CampaignManager(loggers);
+	 CampaignManager campaignManager2 = new CampaignManager(loggers);
 	 
 	 campaignManager1.add(campaign1);
 	 campaignManager1.delete(campaign1);
@@ -32,31 +33,21 @@ public class Main {
 	 campaignManager2.update(campaign1);
 	 
 	 //GAME
-	 Game game1 = new Game();
-	 game1.setId(1);
-	 game1.setNameOfTheGame("Diablo3");
-	 game1.setPrice(109.3);
+	 Game game1 = new Game(1,"Diablo3",109.3);
 	 
-	 Customer customer1 = new Customer();
-	 customer1.setId(1);
-	 customer1.setFirstName("Hasan");
-	 customer1.setDateOfBirth(1998);
-	 customer1.setNationalityId("1712150712");
+	 Customer customer1 = new Customer(1, "Hasan","Bakis","12312549125",LocalDate.of(2000, 5, 10));
+
 	 
-	 GameManager gameManager1 = new GameManager(new EmailLogger());
+	 GameManager gameManager1 = new GameManager(loggers);
 	 gameManager1.saleCampaign(customer1, game1, campaign1);
 	 
 	 
 	 
 	 //CUSTOMER
-	 Customer customer2 = new Customer();
-	 customer2.setId(2);
-	 customer2.setFirstName("Hasan");
-	 customer2.setLastName("Bakis");
-	 customer2.setDateOfBirth(1998);
-	 customer2.setNationalityId("1712150741");
+	 Customer customer2 = new Customer(1, "Toprak","Soyden","17121412511",LocalDate.of(1998, 10, 12));
+
 	 
-	 CustomerManager customerManager = new CustomerManager(new MernisServiceAdapter(), new DatabaseLogger());
+	 CustomerManager customerManager = new CustomerManager(new MernisServiceAdapter(), loggers);
 	 customerManager.add(customer2);
 
 	}

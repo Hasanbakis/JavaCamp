@@ -16,7 +16,7 @@ public class MernisServiceAdapter implements CustomerCheckService{
 		
 		try {
 			 result = soapClient.TCKimlikNoDogrula(Long.parseLong(customer.getNationalityId()), customer.getFirstName().toUpperCase(),
-						customer.getLastName().toUpperCase(),customer.getDateOfBirth());
+						customer.getLastName().toUpperCase(),customer.getDateOfBirth().getYear());
 		} catch (NumberFormatException e) {
 			e.printStackTrace();
 			
