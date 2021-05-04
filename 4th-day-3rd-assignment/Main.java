@@ -52,7 +52,7 @@ public class Main {
 	 Customer customer2 = new Customer();
 	 customer2.setId(2);
 	 customer2.setFirstName("Hasan");
-	 customer2.setLastName("Bakýþ");
+	 customer2.setLastName("Bakis");
 	 customer2.setDateOfBirth(1998);
 	 customer2.setNationalityId("1712150741");
 	 
