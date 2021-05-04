@@ -14,7 +14,7 @@ public class Main {
 	public static void main(String[] args) {
 	
 	 
-	 //CAMPAÝGN
+	 //CAMPAIGN
 	 Campaign campaign1 = new Campaign();
 	 campaign1.setId(1);
 	 campaign1.setCampaignDate(" between 10june and 25july");
@@ -51,10 +51,10 @@ public class Main {
 	 //CUSTOMER
 	 Customer customer2 = new Customer();
 	 customer2.setId(2);
-	 customer2.setFirstName("Toprak");
-	 customer2.setLastName("Soyden");
-	 customer2.setDateOfBirth(2001);
-	 customer2.setNationalityId("172150691215");
+	 customer2.setFirstName("Hasan");
+	 customer2.setLastName("Bakýþ");
+	 customer2.setDateOfBirth(1998);
+	 customer2.setNationalityId("1712150741");
 	 
 	 CustomerManager customerManager = new CustomerManager(new MernisServiceAdapter(), new DatabaseLogger());
 	 customerManager.add(customer2);
